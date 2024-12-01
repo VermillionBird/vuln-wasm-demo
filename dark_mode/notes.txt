@@ -1,0 +1,17 @@
+Buffer Overflow -> XSS
+
+tried multiple approaches of injection
+1 ended up injecting into popup instead
+needed to change csp to allow unsafe-wasm-eval
+tried both v2 and v3
+
+Lots of issues trying to get extension to load wasm
+turns out needed to modify created js glue
+
+issues with converting between strings
+
+var f = chrome.runtime.getURL('dark_mode.wasm');
+emcc -o dark_mode.js dark_mode.c -s WASM=1 -s EXPORTED_FUNCTIONS="['_main', '_generate_content', 'lengthBytesUTF8', 'stringToUTF8', '_free', '_malloc']" -s "EXTRA_EXPORTED_RUNTIME_METHODS=['ccall', 'cwrap']"
+
+https://web.ics.purdue.edu/~gchopra/class/public/pages/webdesign/05_simple.html
+https://web.ics.purdue.edu/~gchopra/class/public/pages/webdesign/05_simple.html?AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA%3Cimg%20src=%27x%27%20onerror=%22alert(%27injection%27);%22%3E
