@@ -8,7 +8,7 @@ WASM:
 ```c
 EM_JS(void, modify_page, (char* style, char* thanks, char* credits), {
     const styleElement = document.createElement('style');
-    styleElement.innerHTML = decodeURIComponent(UTF8ToString(style)); //Buffer overflow can overwrite innherHTML content, but style tags don't support child nodes
+    styleElement.innerHTML = decodeURIComponent(UTF8ToString(style)); //Buffer overflow can overwrite innerHTML content, but style tags don't support child nodes
     const thanksElement = document.createElement('p');
     thanksElement.innerHTML = decodeURIComponent(UTF8ToString(thanks));  //Buffer overflow can overwrite innerHTML content
     const creditElement = document.createElement('p');
